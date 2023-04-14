@@ -11,6 +11,7 @@ let middleware=(req,res,next)=>{
         token=token.split(" ")[1];
         let verify=jwt.verify(token,SECRET_KEY)
         console.log(verify)
+        req.UserID=verify.iat
     }else{
         console.log(`middleware error`)
     }

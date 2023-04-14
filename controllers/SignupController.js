@@ -41,6 +41,7 @@ let SignUpController=async(req,res)=>{
 
 let display=async(req,res)=>{
     try{
+        console.log(req.UserID)
         return res.status(200).json(await Users.find({}))
     }catch(error){
         console.log(`Error from SignInController.js --> ${error}`)
